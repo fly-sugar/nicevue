@@ -13,7 +13,8 @@ export default {
       activeIndex: '0',
       menu: [
         {name: '你我他说', url: '/'},
-        {name: '我的后院', url: '/My'}
+        {name: '我的后院', url: '/My'},
+        {name: '登陆一下吧', url: '/Login'}
       ]
     }
   },

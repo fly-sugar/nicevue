@@ -58,8 +58,7 @@ export default {
       this.copyQQList = [...new Set(this.copyQQList)]
     },
     isShows (row, column, cell, event) {
-      console.log(row)
-      if(row.id){
+      if (row.id) {
         this.isShow = 'show'
       }
     }
