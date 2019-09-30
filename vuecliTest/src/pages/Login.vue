@@ -2,7 +2,7 @@
   <div class="login">用户名：
     <el-autocomplete
       class="inline-input"
-      v-model="cookies ? updateName : userName"
+      v-model="userName"
       :fetch-suggestions="querySearch"
       placeholder="请输入内容">
     </el-autocomplete>
@@ -15,9 +15,7 @@ export default {
   name: 'Login',
   data () {
     return {
-      userName: '',
-      updateName: '',
-      cookies: true
+      userName: ''
     }
   },
   methods: {
@@ -25,15 +23,14 @@ export default {
       this.$cookies.set('userName', '静静', '2d')
     },
     getCookies: function () {
-      this.cookies = true
-      this.updateName = this.$cookies.get('userName')
+      this.userName = this.$cookies.get('userName') || ''
     },
     login: function () {
 
     },
     clearCookie: function () {
       this.$cookies.remove('userName')
-      this.cookies = false
+      this.getCookies()
     },
     querySearch: function () {
 

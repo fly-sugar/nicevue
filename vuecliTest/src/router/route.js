@@ -11,17 +11,20 @@ export default new Router({
     {
       path: '/Login',
       name: 'Login',
-      component: Login
+      component: Login,
+      index: '2'
     },
     {
       path: '/',
       name: 'Home',
-      component: Home
+      component: Home,
+      index: '0'
     },
     {
       path: '/My',
       name: 'My',
-      component: My
+      component: My,
+      index: '1'
     }
   ]
 })

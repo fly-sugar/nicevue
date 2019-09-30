@@ -21,6 +21,20 @@ export default {
   methods: {
     handleChangeRoute (item) {
       this.$router.push(item.url)
+    },
+    toPage () {
+      let index = this.$router.options.routes.filter((v) => {
+        return this.$router.history.current.name === v.name
+      })
+      this.activeIndex = index[0].index
+    }
+  },
+  created () {
+    this.toPage()
+  },
+  watch: {
+    $route () { // 监听路由跳转
+      this.toPage()
     }
   }
 }
