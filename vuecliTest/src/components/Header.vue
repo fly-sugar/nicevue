@@ -23,8 +23,10 @@ export default {
       this.$router.push(item.url)
     },
     toPage () {
+      // console.log(this.$route)当前路由
+      // this.$router.history.current 当前路由
       let index = this.$router.options.routes.filter((v) => {
-        return this.$router.history.current.name === v.name
+        return this.$route.name === v.name
       })
       this.activeIndex = index[0].index
     }
